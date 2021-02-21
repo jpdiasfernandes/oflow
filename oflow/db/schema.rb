@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_20_123112) do
+ActiveRecord::Schema.define(version: 2021_02_21_122524) do
+
+  create_table "activities", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "date"
+    t.float "distance"
+    t.integer "avg_hr"
+    t.integer "max_hr"
+    t.integer "effort"
+    t.integer "user_id"
+    t.integer "elevation"
+    t.string "image_path"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
