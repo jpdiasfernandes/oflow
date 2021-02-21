@@ -1,15 +1,15 @@
-current directory: /home/jose/Projetos/oflow/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
-/usr/bin/ruby -I /usr/lib/ruby/site_ruby/2.7.0 -r ./siteconf20210220-3999-19x4yzt.rb extconf.rb
+current directory: /home/jose/Projetos/o_flow/oflow/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+/usr/bin/ruby -I /usr/lib/ruby/site_ruby/2.7.0 -r ./siteconf20210221-23677-1mpemw8.rb extconf.rb
 creating Makefile
 
-current directory: /home/jose/Projetos/oflow/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+current directory: /home/jose/Projetos/o_flow/oflow/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
 make DESTDIR\= clean
 
-current directory: /home/jose/Projetos/oflow/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+current directory: /home/jose/Projetos/o_flow/oflow/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
 make DESTDIR\=
 compiling websocket_mask.c
 linking shared-object websocket_mask.so
 
-current directory: /home/jose/Projetos/oflow/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+current directory: /home/jose/Projetos/o_flow/oflow/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20210220-3999-1uazruo
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20210221-23677-1x02fzu

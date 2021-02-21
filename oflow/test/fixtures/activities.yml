@@ -3,25 +3,21 @@
 one:
   title: MyString
   description: MyText
+  date_time: 2021-02-21 21:45:45
   distance: 1.5
-  date: 2021-02-21 12:25:24
-  distance: 1.5
+  elapsed_time: 2021-02-21 21:45:45
+  elevation: 1
   avg_hr: 1
   max_hr: 1
   effort: 1
-  user_id: 1
-  elevation: 1
-  image_path: MyString
 
 two:
   title: MyString
   description: MyText
+  date_time: 2021-02-21 21:45:45
   distance: 1.5
-  date: 2021-02-21 12:25:24
-  distance: 1.5
+  elapsed_time: 2021-02-21 21:45:45
+  elevation: 1
   avg_hr: 1
   max_hr: 1
   effort: 1
-  user_id: 1
-  elevation: 1
-  image_path: MyString

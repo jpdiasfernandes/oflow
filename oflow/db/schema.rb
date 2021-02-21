@@ -10,28 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_21_122524) do
+ActiveRecord::Schema.define(version: 2021_02_21_221220) do
 
   create_table "activities", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.datetime "date"
+    t.datetime "date_time"
     t.float "distance"
+    t.time "elapsed_time"
+    t.integer "elevation"
     t.integer "avg_hr"
     t.integer "max_hr"
     t.integer "effort"
-    t.integer "user_id"
-    t.integer "elevation"
-    t.string "image_path"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

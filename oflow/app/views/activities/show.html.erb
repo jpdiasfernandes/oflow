@@ -11,18 +11,23 @@
 </p>
 
 <p>
-  <strong>Distance:</strong>
-  <%= @activity.distance %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @activity.date %>
+  <strong>Date time:</strong>
+  <%= @activity.date_time %>
 </p>
 
 <p>
   <strong>Distance:</strong>
   <%= @activity.distance %>
+</p>
+
+<p>
+  <strong>Elapsed time:</strong>
+  <%= @activity.elapsed_time %>
+</p>
+
+<p>
+  <strong>Elevation:</strong>
+  <%= @activity.elevation %>
 </p>
 
 <p>
@@ -38,21 +43,6 @@
 <p>
   <strong>Effort:</strong>
   <%= @activity.effort %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @activity.user_id %>
-</p>
-
-<p>
-  <strong>Elevation:</strong>
-  <%= @activity.elevation %>
-</p>
-
-<p>
-  <strong>Image path:</strong>
-  <%= @activity.image_path %>
 </p>
 
 <%= link_to 'Edit', edit_activity_path(@activity) %> |

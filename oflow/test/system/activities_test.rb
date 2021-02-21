@@ -15,15 +15,14 @@ class ActivitiesTest < ApplicationSystemTestCase
     click_on "New Activity"
 
     fill_in "Avg hr", with: @activity.avg_hr
-    fill_in "Date", with: @activity.date
+    fill_in "Date time", with: @activity.date_time
     fill_in "Description", with: @activity.description
     fill_in "Distance", with: @activity.distance
     fill_in "Effort", with: @activity.effort
+    fill_in "Elapsed time", with: @activity.elapsed_time
     fill_in "Elevation", with: @activity.elevation
-    fill_in "Image path", with: @activity.image_path
     fill_in "Max hr", with: @activity.max_hr
     fill_in "Title", with: @activity.title
-    fill_in "User", with: @activity.user_id
     click_on "Create Activity"
 
     assert_text "Activity was successfully created"
@@ -35,15 +34,14 @@ class ActivitiesTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Avg hr", with: @activity.avg_hr
-    fill_in "Date", with: @activity.date
+    fill_in "Date time", with: @activity.date_time
     fill_in "Description", with: @activity.description
     fill_in "Distance", with: @activity.distance
     fill_in "Effort", with: @activity.effort
+    fill_in "Elapsed time", with: @activity.elapsed_time
     fill_in "Elevation", with: @activity.elevation
-    fill_in "Image path", with: @activity.image_path
     fill_in "Max hr", with: @activity.max_hr
     fill_in "Title", with: @activity.title
-    fill_in "User", with: @activity.user_id
     click_on "Update Activity"
 
     assert_text "Activity was successfully updated"
