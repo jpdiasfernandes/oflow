@@ -1,5 +1,7 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /activities or /activities.json
   def index
@@ -12,7 +14,8 @@ class ActivitiesController < ApplicationController
 
   # GET /activities/new
   def new
-    @activity = Activity.new
+    #@activity = Activity.new
+    @activity = current_user.activities.build
   end
 
   # GET /activities/1/edit
@@ -21,8 +24,9 @@ class ActivitiesController < ApplicationController
 
   # POST /activities or /activities.json
   def create
-    @activity = Activity.new(activity_params)
-
+    #@activity = Activity.new(activity_params)
+    @activity = current_user.activities.build(activity_params)
+    
     respond_to do |format|
       if @activity.save
         format.html { redirect_to @activity, notice: "Activity was successfully created." }
@@ -56,6 +60,11 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def correct_user
+    @activity = current_user.activities.find_by(id: params[:id])
+    redirect_to activities_path, notice: "No permission to do that!" if @activity.nil?
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_activity
@@ -64,6 +73,6 @@ class ActivitiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def activity_params
-      params.require(:activity).permit(:title, :description, :date_time, :distance, :elapsed_time, :elevation, :avg_hr, :max_hr, :effort)
+      params.require(:activity).permit(:title, :description, :date_time, :distance, :elapsed_time, :elevation, :avg_hr, :max_hr, :effort, :user_id)
     end
 end
