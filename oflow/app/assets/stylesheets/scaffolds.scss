@@ -1,7 +1,7 @@
 body {
   background-color: #fff;
   color: #333;
-  margin: 33px; }
+}
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -14,14 +14,17 @@ pre {
   font-size: 11px; }
 
 a {
-  color: #000; }
+  color: rgb(146, 122, 77); }
 
 a:visited {
   color: #666; }
 
+
+/*
 a:hover {
-  color: #fff;
-  background-color: #000; }
+  color: rgb(54, 48, 48);
+  background-color: rgba(158, 84, 84, 0.178); }
+*/
 
 th {
   padding-bottom: 5px; }
