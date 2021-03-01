@@ -1,6 +1,7 @@
  
 a{
   text-decoration: none;
+  padding: 8px;
 }
  
 
@@ -37,6 +38,13 @@ h1:after{
   background: linear-gradient(center, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%); 
 }
 */
+
+.bkg-login{
+  background-image: url(https://ciclovivo.com.br/wp-content/uploads/2016/01/16709401_1417083658336970_568622001_o-696x464.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 
 p{
