@@ -41,9 +41,12 @@ h1:after{
 
 .bkg-login{
   background-image: url(https://ciclovivo.com.br/wp-content/uploads/2016/01/16709401_1417083658336970_568622001_o-696x464.jpg);
-  background-repeat: no-repeat;
+
+  /* Center and scale the image nicely */
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  height: 100%;
 }
 
 /*
@@ -154,8 +157,8 @@ input[type="submit"]:hover{
   width: 88%;   
   padding: 18px 6% 60px 6%;
   margin: 0 0 35px 0;
-  background: #f7f7f7;
   border: 1px solid rgba(194, 162, 103, 0.8);
+  background-color: whitesmoke;
    
   -webkit-box-shadow: 5px;
   border-radius: 5px;
