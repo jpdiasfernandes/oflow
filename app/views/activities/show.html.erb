@@ -1,0 +1,48 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @activity.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @activity.description %>
+</p>
+
+<p>
+  <strong>Date time:</strong>
+  <%= @activity.date_time %>
+</p>
+
+<p>
+  <strong>Distance:</strong>
+  <%= @activity.distance %>
+</p>
+
+<p>
+  <strong>Elapsed time:</strong>
+  <%= @activity.elapsed_time %>
+</p>
+
+<p>
+  <strong>Elevation:</strong>
+  <%= @activity.elevation %>
+</p>
+
+<p>
+  <strong>Avg hr:</strong>
+  <%= @activity.avg_hr %>
+</p>
+
+<p>
+  <strong>Max hr:</strong>
+  <%= @activity.max_hr %>
+</p>
+
+<p>
+  <strong>Effort:</strong>
+  <%= @activity.effort %>
+</p>
+
+<%= link_to 'Edit', edit_activity_path(@activity) %> |
+<%= link_to 'Back', activities_path %>

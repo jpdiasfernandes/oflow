@@ -1,0 +1,42 @@
+
+<h1>Activities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Date time</th>
+      <th>Distance</th>
+      <th>Elapsed time</th>
+      <th>Elevation</th>
+      <th>Avg hr</th>
+      <th>Max hr</th>
+      <th>Effort</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.title %></td>
+        <td><%= activity.description %></td>
+        <td><%= activity.date_time %></td>
+        <td><%= activity.distance %></td>
+        <td><%= activity.elapsed_time %></td>
+        <td><%= activity.elevation %></td>
+        <td><%= activity.avg_hr %></td>
+        <td><%= activity.max_hr %></td>
+        <td><%= activity.effort %></td>
+        <td><%= link_to 'Show', activity %></td>
+        <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
+        <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Activity', new_activity_path %>
