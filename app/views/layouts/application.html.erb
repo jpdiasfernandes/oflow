@@ -22,18 +22,18 @@
   </head>
 
   <body>
-    <div id="container">
+    <div id="page-container"> 
+      <div id="content-wrap">
     <%= render 'layouts/header' %>
 
-    <div class="container"> 
       <% if notice %>
         <%= render 'layouts/alerts' %>
       <% end %>
 
       <%= yield %>
     </div>
-
     <%= render 'layouts/footer' %>
     </div>
   </body>
+
 </html>

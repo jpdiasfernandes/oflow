@@ -16,15 +16,9 @@
 
  /* The default styles should be here */
 
-#container {
-  min-height:100%;
-  position:relative;
-}
+
 body {
   color: #333;
-  display: flex;
-  flex-direction: column;
-  position: relative;
 }
 
 body, html {
@@ -118,10 +112,8 @@ input[type="submit"]:hover{
 }
 
 /* footer styles */
-
 footer {
   padding-left: 20px;
-  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -141,4 +133,20 @@ footer {
   padding-left: 5px;
   margin-right: 50px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
 }
