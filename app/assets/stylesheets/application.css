@@ -16,10 +16,15 @@
 
  /* The default styles should be here */
 
+#container {
+  min-height:100%;
+  position:relative;
+}
 body {
   color: #333;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 body, html {
