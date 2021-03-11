@@ -1,25 +1,12 @@
-
-<h1>Activities</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Date time</th>
-      <th>Distance</th>
-      <th>Elapsed time</th>
-      <th>Elevation</th>
-      <th>Avg hr</th>
-      <th>Max hr</th>
-      <th>Effort</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="activity-mainbody">
+  <div class="activity-userinfo">
+    User info
+  </div>
+  <div class="activity-feed">
+    Feed
     <% @activities.each do |activity| %>
-      <tr>
+      <div class=>
+        <tr>
         <td><%= activity.title %></td>
         <td><%= activity.description %></td>
         <td><%= activity.date_time %></td>
@@ -33,10 +20,22 @@
         <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
         <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      </div>
     <% end %>
-  </tbody>
-</table>
 
-<br>
+  </div>
+  <!-- The point of this misc column is to add more technical data
+  such as distance and training related, friends updates, clubs updates
+  in small widgets -->
+  <div class="activity-misc">
+    Misc
+  </div>
+</div>
 
+
+
+
+    
 <%= link_to 'New Activity', new_activity_path %>
+<br><br>
+
