@@ -1,3 +1,33 @@
 // Place all the styles related to the activities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.activity-mainbody {
+    width: 1024px;
+    height: auto;
+    margin: 10px auto 10px auto;
+    overflow: hidden;
+    background-color: beige;
+}
+
+.activity-feed {
+    width: 50%;
+    margin-left: 2%;
+    float: left;
+    height: 1000px;
+    background-color: bisque;
+}
+
+.activity-userinfo {
+    width: 23%;
+    float: left;
+    height: 300px;
+    background-color: rgb(134, 103, 65);
+}
+
+.activity-misc {
+    width: 23%;
+    float: right;
+    height: 300px;
+    background-color: rgb(246, 184, 107);
+}
