@@ -11,58 +11,60 @@
     </div>
   <% end %>
 
+<div class="field-lay">
+<div class="field-edt">
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+   <%= form.label :title %>
+   <%= form.text_field :title, class:"form-control", id:"exampleFormControlTextarea1" %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="field-d-t">
+   <%= form.label :date_time %>
+   <%= form.datetime_select :date_time %>
   </div>
-
-  <div class="field">
-    <%= form.label :date_time %>
-    <%= form.datetime_select :date_time %>
-  </div>
-
-  <div class="field">
-    <%= form.label :distance %>
-    <%= form.text_field :distance %>
-  </div>
-
-  <div class="field">
-    <%= form.label :elapsed_time %>
+ 
+  <div class="field-d-t">
+   <%= form.label :elapsed_time %>
     <%= form.time_select :elapsed_time %>
   </div>
 
   <div class="field">
+    <%= form.label :distance %>
+    <%= form.text_field :distance, class:"form-control", id:"exampleFormControlTextarea1" %>
+  </div>
+
+  <div class="field-e-m-a-e">
     <%= form.label :elevation %>
-    <%= form.number_field :elevation %>
+    <%= form.number_field :elevation, class:"form-control", id:"exampleFormControlTextarea1" %>
   </div>
 
-  <div class="field">
+  <div class="field-e-m-a-e">
     <%= form.label :avg_hr %>
-    <%= form.number_field :avg_hr %>
+    <%= form.number_field :avg_hr, class:"form-control", id:"exampleFormControlTextarea1" %>
   </div>
 
-  <div class="field">
+  <div class="field-e-m-a-e">
     <%= form.label :max_hr %>
-    <%= form.number_field :max_hr %>
+    <%= form.number_field :max_hr, class:"form-control", id:"exampleFormControlTextarea1" %>
+  </div>
+
+  <div class="field-e-m-a-e">
+    <%= form.label :effort %>
+    <%= form.number_field :effort, class:"form-control", id:"exampleFormControlTextarea1" %>
   </div>
 
   <div class="field">
-    <%= form.label :effort %>
-    <%= form.number_field :effort %>
-  </div>
+   <%= form.label :description %>
+   <%= form.text_area :description, class:"form-control", id:"exampleFormControlTextarea1" %>
+  </div> 
 
   <div class="field">
     <%= form.number_field :user_id, id: :activity_user_id, value: current_user.id, type: :hidden %>
   </div>
 
-
-
-  <div class="actions">
+</div>
+<div class="actions">
     <%= form.submit %>
   </div>
+</div>
 <% end %>
