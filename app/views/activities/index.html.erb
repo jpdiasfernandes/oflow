@@ -12,7 +12,9 @@
               <img src="" alt="Img">
             </div>
           </div>
-          <h3><%= activity.title %></h3>
+          <%= link_to activity do%>
+            <h3><%= activity.title %></h3>
+          <% end %> 
           <h5><%= activity.date_time.to_formatted_s(:short) %></h5>
         </div> 
         <br>
