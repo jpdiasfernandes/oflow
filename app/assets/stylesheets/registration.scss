@@ -40,6 +40,7 @@ margin-left: 20px;
   border-radius: 10px;
   box-sizing: border-box;
   margin-top: -10px;
+  font-size: 125%;
 }
 
 .field-edt{
@@ -141,4 +142,65 @@ input[type="submit"]{
   animation-duration: 0.5s;
   animation-timing-function: ease;
   animation-fill-mode: both;
+}
+
+/* Show*/
+.show-lay{
+  background-color: rgba(240, 229, 229, 0.808);
+  font-size: 150%;
+  height: 400px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-top: 10%;
+  border: 3px outset;
+  /*border-color: rgba(247, 128, 44, 0.801);*/
+}
+
+.show-1{
+  padding: 10px;
+  font-weight: bold;
+  font-size: 170%;
+  margin-left: 1%;
+}
+
+.show{
+  padding: 5px;
+  text-align: right;
+  margin-top: -6%;
+  margin-right: 2%;
+}
+
+.show-2{
+  padding: 5px;
+  display: flex;
+  font-size: 115%;
+  margin-top: 10%;
+  margin-left: 1%;
+}
+
+.show-3{
+  padding: 5px;
+  margin-top: 6%;
+  margin-left: 1%;
+  font-size: 115%;
+}
+
+.show-4{
+  padding: 5px;
+  letter-spacing: 1px;
+  font-size: 115%;
+  margin-top: 5%;
+  text-align: right;
+  margin-right: 2%;
+}
+
+.show-5{
+  padding: 5px;
+  letter-spacing: 1px;
+  font-size: 115%;
+  margin-top: 2%;
+  margin-right: 2%;
+  text-align: right;
 }
