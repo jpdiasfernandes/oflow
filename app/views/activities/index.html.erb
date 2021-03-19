@@ -1,33 +1,35 @@
 <div class="activity-mainbody">
-  <div class="activity-userinfo">
+  <div class="activity-userinfo activity-common">
     User info
   </div>
-  <div class="activity-feed">
+  <div class="activity-feed activity-common">
     Feed
     <% @activities.each do |activity| %>
-      <div class=>
-        <tr>
-        <td><%= activity.title %></td>
-        <td><%= activity.description %></td>
-        <td><%= activity.date_time %></td>
-        <td><%= activity.distance %></td>
-        <td><%= activity.elapsed_time %></td>
-        <td><%= activity.elevation %></td>
-        <td><%= activity.avg_hr %></td>
-        <td><%= activity.max_hr %></td>
-        <td><%= activity.effort %></td>
-        <td><%= link_to 'Show', activity %></td>
-        <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
-        <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div style="background-color: rgb(250, 239, 226);">
+        
+        <div class="entry-header">            
+          <div class="left" style="padding-bottom: 5px;">              
+            <img class="entry-avatar" alt="avatar" src="https://www.forez-info.com/images/stories/Mag/gueorgiouinterwtrs.jpg">
+          </div>
+        <h5><%= activity.user_id %></h5>
+        </div>
+        <%= link_to activity do%>
+          <h4><%= activity.title %></h4>
+        <% end %>
+        <p><%= activity.description %></p>
+        <p>Distance: <%= activity.distance %></p>
+        <%= activity.elapsed_time.strftime("Elapsed Time: %H:%M:%S") %>
+        <%= activity.elevation %>
+        <%= link_to 'Show', activity %>
       </div>
+      <br>
     <% end %>
 
   </div>
   <!-- The point of this misc column is to add more technical data
   such as distance and training related, friends updates, clubs updates
   in small widgets -->
-  <div class="activity-misc">
+  <div class="activity-misc activity-common">
     Misc
   </div>
 </div>
