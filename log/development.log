@@ -11278,3 +11278,2423 @@ Processing by HomeController#welcome as HTML
 Completed 200 OK in 57ms (Views: 54.6ms | ActiveRecord: 1.2ms | Allocations: 6876)
 
 
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 17:59:23 +0000
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1293)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 6.8ms | Allocations: 526)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 90)
+  Rendered layout layouts/application.html.erb (Duration: 206.5ms | Allocations: 42792)
+Completed 200 OK in 237ms (Views: 212.6ms | ActiveRecord: 0.4ms | Allocations: 49498)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-03-19 17:59:31 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 567)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 4273)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 145)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 8136)
+Completed 200 OK in 15ms (Views: 9.4ms | ActiveRecord: 0.3ms | Allocations: 13796)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2021-03-19 17:59:42 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"jpdiasfernandes13@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jpdiasfernandes13@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.3ms | Allocations: 1850)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"jpdiasfernandes13@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 116)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 664)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 112)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 4541)
+Completed 200 OK in 199ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 5604)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-03-19 18:17:56 +0000
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 3 pending migrations:
+
+20210221214545_create_activities.rb
+20210221221220_devise_create_users.rb
+20210222194809_add_user_id_to_activities.rb
+
+
+):
+  
+activerecord (6.1.3) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.3) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.3) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.3) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.3) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.3) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+webpacker (5.2.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.1.3) lib/rails/engine.rb:539:in `call'
+puma (5.2.1) lib/puma/configuration.rb:247:in `call'
+puma (5.2.1) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.1) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.1) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.1) lib/puma/server.rb:431:in `process_client'
+puma (5.2.1) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2021-03-19 18:17:58 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActivities (20210221214545)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "activities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "date_time" datetime, "distance" float, "elapsed_time" time, "elevation" integer, "avg_hr" integer, "max_hr" integer, "effort" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210221214545"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseCreateUsers (20210221221220)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210221221220"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserIdToActivities (20210222194809)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "activities" ADD "user_id" integer[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "index_activities_on_user_id" ON "activities" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210222194809"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-03-19 18:17:58.783020"], ["updated_at", "2021-03-19 18:17:58.783020"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-03-19 18:17:58 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.7ms | Allocations: 185)
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 496)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 2193)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+yarn run v1.22.10
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+
+
+error Command "webpack" not found.
+
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 481)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 90)
+  Rendered layout layouts/application.html.erb (Duration: 1417.5ms | Allocations: 17015)
+Completed 200 OK in 1458ms (Views: 1423.8ms | ActiveRecord: 1.1ms | Allocations: 26150)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-03-19 18:18:39 +0000
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"jpdiasfernandes13@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jpdiasfernandes13@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "jpdiasfernandes13@gmail.com"], ["encrypted_password", "$2a$12$hKd6mckOEO1N2ZGY32iSb.snaOLBt3IXQNa0oPEZhfJ/G3HZ35i5K"], ["created_at", "2021-03-19 18:18:40.375135"], ["updated_at", "2021-03-19 18:18:40.375135"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 320ms (ActiveRecord: 6.0ms | Allocations: 15307)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-19 18:18:40 +0000
+Processing by HomeController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/welcome.html.erb within layouts/application
+  Rendered home/welcome.html.erb within layouts/application (Duration: 0.5ms | Allocations: 87)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 3.7ms | Allocations: 915)
+  Rendered layouts/_alerts.html.erb (Duration: 0.4ms | Allocations: 101)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 4973)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.3ms | Allocations: 6044)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:18:43 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 875)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 3.7ms | Allocations: 816)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 5409)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.4ms | Allocations: 7129)
+
+
+Started GET "/activities/new" for 127.0.0.1 at 2021-03-19 18:18:45 +0000
+Processing by ActivitiesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering activities/new.html.erb within layouts/application
+  Rendered activities/_form.html.erb (Duration: 13.1ms | Allocations: 6255)
+  Rendered activities/new.html.erb within layouts/application (Duration: 14.5ms | Allocations: 6567)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 131)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 10345)
+Completed 200 OK in 109ms (Views: 23.0ms | ActiveRecord: 1.1ms | Allocations: 20465)
+
+
+Started POST "/activities" for 127.0.0.1 at 2021-03-19 18:18:49 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"dfdfdfdffd", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"19", "date_time(4i)"=>"18", "date_time(5i)"=>"18", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"19", "elapsed_time(4i)"=>"18", "elapsed_time(5i)"=>"18", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities/new
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms | Allocations: 2401)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/activities_controller.rb:28:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-19 18:18:56 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"dfdfdfdffd", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"19", "date_time(4i)"=>"18", "date_time(5i)"=>"18", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"19", "elapsed_time(4i)"=>"18", "elapsed_time(5i)"=>"18", "distance"=>"3434", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mActivity Create (0.3ms)[0m  [1m[32mINSERT INTO "activities" ("title", "description", "date_time", "distance", "elapsed_time", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "dfdfdfdffd"], ["description", ""], ["date_time", "2021-03-19 18:18:00"], ["distance", 3434.0], ["elapsed_time", "2000-01-01 18:18:00"], ["created_at", "2021-03-19 18:18:56.662863"], ["updated_at", "2021-03-19 18:18:56.662863"], ["user_id", 1]]
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (53.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+Redirected to http://localhost:3000/activities/1
+Completed 302 Found in 67ms (ActiveRecord: 53.6ms | Allocations: 5981)
+
+
+Started GET "/activities/1" for 127.0.0.1 at 2021-03-19 18:18:56 +0000
+Processing by ActivitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:71:in `set_activity'
+  Rendering layout layouts/application.html.erb
+  Rendering activities/show.html.erb within layouts/application
+  Rendered activities/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 402)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 5.5ms | Allocations: 1050)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 5355)
+Completed 200 OK in 28ms (Views: 22.3ms | ActiveRecord: 0.7ms | Allocations: 6503)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:19:00 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 647)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 3.2ms | Allocations: 812)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 5164)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.3ms | Allocations: 5610)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:22:56 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 866)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 1129)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 15573)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.2ms | Allocations: 16824)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:26:03 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 865)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 4.8ms | Allocations: 1129)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 6317)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.5ms | Allocations: 7571)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:26:27 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 862)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | Allocations: 1130)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 6315)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.4ms | Allocations: 7566)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:26:55 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 864)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 5.1ms | Allocations: 1129)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 6316)
+Completed 200 OK in 30ms (Views: 27.6ms | ActiveRecord: 0.4ms | Allocations: 7567)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:27:46 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 864)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 2.6ms | Allocations: 1129)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 6322)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.3ms | Allocations: 7578)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:27:57 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 865)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1129)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 6329)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.2ms | Allocations: 7581)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:28:18 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 865)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 4.4ms | Allocations: 1129)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 6323)
+Completed 200 OK in 28ms (Views: 24.5ms | ActiveRecord: 0.5ms | Allocations: 7592)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:31:46 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 869)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 2.4ms | Allocations: 1129)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 6323)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.3ms | Allocations: 7565)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:32:31 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 803)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 4.5ms | Allocations: 1129)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 6255)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.4ms | Allocations: 7507)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:32:38 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 789)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 4.7ms | Allocations: 1129)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 6241)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.5ms | Allocations: 7499)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:32:57 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 789)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 1129)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 6241)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 7500)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:33:18 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 786)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 6.9ms | Allocations: 1129)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 6238)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.5ms | Allocations: 7494)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:33:34 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 785)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 4.6ms | Allocations: 1134)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 6254)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.4ms | Allocations: 7512)
+
+
+Started GET "/activities/new" for 127.0.0.1 at 2021-03-19 18:33:55 +0000
+Processing by ActivitiesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering activities/new.html.erb within layouts/application
+  Rendered activities/_form.html.erb (Duration: 15.7ms | Allocations: 5195)
+  Rendered activities/new.html.erb within layouts/application (Duration: 17.4ms | Allocations: 5502)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 444)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 89)
+  Rendered layout layouts/application.html.erb (Duration: 32.4ms | Allocations: 10282)
+Completed 200 OK in 43ms (Views: 36.2ms | ActiveRecord: 0.3ms | Allocations: 12672)
+
+
+Started POST "/activities" for 127.0.0.1 at 2021-03-19 18:34:12 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"Olá", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"19", "date_time(4i)"=>"18", "date_time(5i)"=>"33", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"19", "elapsed_time(4i)"=>"18", "elapsed_time(5i)"=>"33", "distance"=>"12", "elevation"=>"3434", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mActivity Create (0.6ms)[0m  [1m[32mINSERT INTO "activities" ("title", "description", "date_time", "distance", "elapsed_time", "elevation", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Olá"], ["description", ""], ["date_time", "2021-03-19 18:33:00"], ["distance", 12.0], ["elapsed_time", "2000-01-01 18:33:00"], ["elevation", 3434], ["created_at", "2021-03-19 18:34:12.869117"], ["updated_at", "2021-03-19 18:34:12.869117"], ["user_id", 1]]
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (26.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+Redirected to http://localhost:3000/activities/2
+Completed 302 Found in 51ms (ActiveRecord: 27.0ms | Allocations: 5872)
+
+
+Started GET "/activities/2" for 127.0.0.1 at 2021-03-19 18:34:12 +0000
+Processing by ActivitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:71:in `set_activity'
+  Rendering layout layouts/application.html.erb
+  Rendering activities/show.html.erb within layouts/application
+  Rendered activities/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 387)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 4.2ms | Allocations: 816)
+  Rendered layouts/_alerts.html.erb (Duration: 0.8ms | Allocations: 98)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 5199)
+Completed 200 OK in 25ms (Views: 20.0ms | ActiveRecord: 0.5ms | Allocations: 6222)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:34:16 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 850)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 6.0ms | Allocations: 816)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 5380)
+Completed 200 OK in 27ms (Views: 24.1ms | ActiveRecord: 0.7ms | Allocations: 5962)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:34:31 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 853)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 5.9ms | Allocations: 1129)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 6307)
+Completed 200 OK in 30ms (Views: 27.6ms | ActiveRecord: 0.5ms | Allocations: 7562)
+
+
+Started GET "/activities/new" for 127.0.0.1 at 2021-03-19 18:34:52 +0000
+Processing by ActivitiesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering activities/new.html.erb within layouts/application
+  Rendered activities/_form.html.erb (Duration: 16.5ms | Allocations: 5195)
+  Rendered activities/new.html.erb within layouts/application (Duration: 18.5ms | Allocations: 5501)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 131)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 9343)
+Completed 200 OK in 39ms (Views: 32.1ms | ActiveRecord: 0.2ms | Allocations: 11083)
+
+
+Started POST "/activities" for 127.0.0.1 at 2021-03-19 18:34:59 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"Olá", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"19", "date_time(4i)"=>"18", "date_time(5i)"=>"34", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"19", "elapsed_time(4i)"=>"18", "elapsed_time(5i)"=>"34", "distance"=>"344", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mActivity Create (0.6ms)[0m  [1m[32mINSERT INTO "activities" ("title", "description", "date_time", "distance", "elapsed_time", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Olá"], ["description", ""], ["date_time", "2021-03-19 18:34:00"], ["distance", 344.0], ["elapsed_time", "2000-01-01 18:34:00"], ["created_at", "2021-03-19 18:34:59.759950"], ["updated_at", "2021-03-19 18:34:59.759950"], ["user_id", 1]]
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (26.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+Redirected to http://localhost:3000/activities/3
+Completed 302 Found in 46ms (ActiveRecord: 27.6ms | Allocations: 5853)
+
+
+Started GET "/activities/3" for 127.0.0.1 at 2021-03-19 18:34:59 +0000
+Processing by ActivitiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:71:in `set_activity'
+  Rendering layout layouts/application.html.erb
+  Rendering activities/show.html.erb within layouts/application
+  Rendered activities/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 386)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 4.0ms | Allocations: 816)
+  Rendered layouts/_alerts.html.erb (Duration: 0.7ms | Allocations: 98)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 5197)
+Completed 200 OK in 25ms (Views: 20.7ms | ActiveRecord: 0.5ms | Allocations: 6201)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:35:02 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 700)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 3.8ms | Allocations: 816)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 5239)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.5ms | Allocations: 5691)
+
+
+Started GET "/activities/new" for 127.0.0.1 at 2021-03-19 18:38:06 +0000
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ActivitiesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering activities/new.html.erb within layouts/application
+  Rendered activities/_form.html.erb (Duration: 45.4ms | Allocations: 8647)
+  Rendered activities/new.html.erb within layouts/application (Duration: 48.6ms | Allocations: 9411)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.2ms | Allocations: 468)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 90)
+  Rendered layout layouts/application.html.erb (Duration: 86.9ms | Allocations: 20668)
+Completed 200 OK in 158ms (Views: 92.9ms | ActiveRecord: 2.4ms | Allocations: 39035)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:42:45 +0000
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 39.7ms | Allocations: 7456)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 13.0ms | Allocations: 5087)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 90)
+  Rendered layout layouts/application.html.erb (Duration: 70.4ms | Allocations: 19514)
+Completed 200 OK in 98ms (Views: 74.1ms | ActiveRecord: 4.0ms | Allocations: 23526)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:45:05 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 18.5ms | Allocations: 9641)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 9706)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.2ms | Allocations: 10935)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"activities"}, missing required keys: [:id]
+Did you mean?  activity_url
+               new_activity_url
+               new_activity_path
+               edit_activity_url):
+    12:               <img src="" alt="Img">
+    13:             </div>
+    14:           </div>
+    15:           <%= link_to activity_path do %>
+    16:           <h3>link_to <%= activity.title %>, activity_path</h3>
+    17:           <% end %> 
+    18:           <h5><%= activity.date_time.to_formatted_s(:short) %></h5>
+  
+app/views/activities/index.html.erb:15
+app/views/activities/index.html.erb:7
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:46:07 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2027)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2092)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms | Allocations: 3431)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"activities"}, missing required keys: [:id]
+Did you mean?  activity_url
+               new_activity_url
+               new_activity_path
+               edit_activity_url):
+    12:               <img src="" alt="Img">
+    13:             </div>
+    14:           </div>
+    15:           <%= link_to activity_path do%>
+    16:           <h3><%= activity.title %></h3>
+    17:           <% end %> 
+    18:           <h5><%= activity.date_time.to_formatted_s(:short) %></h5>
+  
+app/views/activities/index.html.erb:15
+app/views/activities/index.html.erb:7
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:48:11 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1943)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2008)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms | Allocations: 3239)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"activities"}, missing required keys: [:id]
+Did you mean?  activity_url
+               new_activity_url
+               new_activity_path
+               edit_activity_url):
+    12:               <img src="" alt="Img">
+    13:             </div>
+    14:           </div>
+    15:           <% link_to activity_path do%>
+    16:           <h3><%= activity.title %></h3>
+    17:           <% end %> 
+    18:           <h5><%= activity.date_time.to_formatted_s(:short) %></h5>
+  
+app/views/activities/index.html.erb:15
+app/views/activities/index.html.erb:7
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:48:13 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1672)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 1736)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms | Allocations: 2148)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"activities"}, missing required keys: [:id]
+Did you mean?  activity_url
+               new_activity_url
+               new_activity_path
+               edit_activity_url):
+    12:               <img src="" alt="Img">
+    13:             </div>
+    14:           </div>
+    15:           <% link_to activity_path do%>
+    16:           <h3><%= activity.title %></h3>
+    17:           <% end %> 
+    18:           <h5><%= activity.date_time.to_formatted_s(:short) %></h5>
+  
+app/views/activities/index.html.erb:15
+app/views/activities/index.html.erb:7
+Started GET "/activities/new" for 127.0.0.1 at 2021-03-19 18:48:17 +0000
+Processing by ActivitiesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering activities/new.html.erb within layouts/application
+  Rendered activities/_form.html.erb (Duration: 8.1ms | Allocations: 8161)
+  Rendered activities/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 8480)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 466)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 90)
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 13360)
+Completed 200 OK in 51ms (Views: 26.5ms | ActiveRecord: 0.2ms | Allocations: 25089)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:48:21 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1676)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 1740)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 2166)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"activities"}, missing required keys: [:id]
+Did you mean?  activity_url
+               new_activity_url
+               new_activity_path
+               edit_activity_url):
+    12:               <img src="" alt="Img">
+    13:             </div>
+    14:           </div>
+    15:           <% link_to activity_path do%>
+    16:           <h3><%= activity.title %></h3>
+    17:           <% end %> 
+    18:           <h5><%= activity.date_time.to_formatted_s(:short) %></h5>
+  
+app/views/activities/index.html.erb:15
+app/views/activities/index.html.erb:7
+Started GET "/activities/new" for 127.0.0.1 at 2021-03-19 18:50:51 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ActivitiesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering activities/new.html.erb within layouts/application
+  Rendered activities/_form.html.erb (Duration: 15.5ms | Allocations: 8645)
+  Rendered activities/new.html.erb within layouts/application (Duration: 19.2ms | Allocations: 9332)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 468)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 90)
+  Rendered layout layouts/application.html.erb (Duration: 30.6ms | Allocations: 16643)
+Completed 200 OK in 59ms (Views: 37.4ms | ActiveRecord: 0.8ms | Allocations: 35014)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:50:53 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 22.1ms | Allocations: 5196)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 5261)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.5ms | Allocations: 5839)
+
+
+  
+ActionView::Template::Error (undefined method `activity' for #<ActionView::Base:0x00000000008688>
+Did you mean?  activity_url):
+    12:               <img src="" alt="Img">
+    13:             </div>
+    14:           </div>
+    15:           <% link_to activity(@activity) do%>
+    16:           <h3><%= activity.title %></h3>
+    17:           <% end %> 
+    18:           <h5><%= activity.date_time.to_formatted_s(:short) %></h5>
+  
+app/views/activities/index.html.erb:15
+app/views/activities/index.html.erb:7
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:51:22 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2027)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 2092)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms | Allocations: 3451)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"activities"}, missing required keys: [:id]
+Did you mean?  activity_path
+               new_activity_url
+               new_activity_path
+               edit_activity_url):
+    12:               <img src="" alt="Img">
+    13:             </div>
+    14:           </div>
+    15:           <% link_to activity_url do%>
+    16:           <h3><%= activity.title %></h3>
+    17:           <% end %> 
+    18:           <h5><%= activity.date_time.to_formatted_s(:short) %></h5>
+  
+app/views/activities/index.html.erb:15
+app/views/activities/index.html.erb:7
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:51:24 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1681)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 1746)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms | Allocations: 2189)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"activities"}, missing required keys: [:id]
+Did you mean?  activity_path
+               new_activity_url
+               new_activity_path
+               edit_activity_url):
+    12:               <img src="" alt="Img">
+    13:             </div>
+    14:           </div>
+    15:           <% link_to activity_url do%>
+    16:           <h3><%= activity.title %></h3>
+    17:           <% end %> 
+    18:           <h5><%= activity.date_time.to_formatted_s(:short) %></h5>
+  
+app/views/activities/index.html.erb:15
+app/views/activities/index.html.erb:7
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:53:20 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1685)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 3.3ms | Allocations: 1197)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 7355)
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.4ms | Allocations: 8643)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:53:41 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1164)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 2.5ms | Allocations: 1133)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 6632)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.3ms | Allocations: 7887)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:54:03 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1164)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 2.4ms | Allocations: 1130)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 6617)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.3ms | Allocations: 7873)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:54:05 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 906)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | Allocations: 817)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 5437)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.4ms | Allocations: 5880)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:54:07 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 897)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 4.5ms | Allocations: 813)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 5420)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.7ms | Allocations: 5872)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:54:08 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 1.8ms | Allocations: 813)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 5418)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.4ms | Allocations: 5894)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:54:08 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 5.1ms | Allocations: 813)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 5418)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.7ms | Allocations: 5872)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:54:08 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 5.3ms | Allocations: 813)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 5418)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.5ms | Allocations: 5878)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:54:08 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 813)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 5418)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms | Allocations: 5874)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:54:10 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 2.9ms | Allocations: 813)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 5418)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.4ms | Allocations: 5863)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:54:10 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 2.1ms | Allocations: 813)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 5418)
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.4ms | Allocations: 5876)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:54:11 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 3.8ms | Allocations: 813)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 5429)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.6ms | Allocations: 5877)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:54:11 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 10.9ms | Allocations: 813)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | Allocations: 5418)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.6ms | Allocations: 5861)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:54:11 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 3.2ms | Allocations: 813)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 5432)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.2ms | Allocations: 5893)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:54:12 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | Allocations: 813)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 5418)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.3ms | Allocations: 5868)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:54:12 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 7.1ms | Allocations: 813)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 5418)
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 0.8ms | Allocations: 5882)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:54:12 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 5.6ms | Allocations: 813)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 5418)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.6ms | Allocations: 5872)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 18:54:22 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1068)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 2.2ms | Allocations: 1130)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 6522)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.2ms | Allocations: 7792)
+
+
+Started GET "/activities/1" for 127.0.0.1 at 2021-03-19 18:54:24 +0000
+Processing by ActivitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:71:in `set_activity'
+  Rendering layout layouts/application.html.erb
+  Rendering activities/show.html.erb within layouts/application
+  Rendered activities/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 404)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 3.5ms | Allocations: 816)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 4934)
+Completed 200 OK in 23ms (Views: 17.9ms | ActiveRecord: 0.6ms | Allocations: 6059)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-19 19:15:10 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/welcome.html.erb within layouts/application
+  Rendered home/welcome.html.erb within layouts/application (Duration: 0.7ms | Allocations: 331)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 6.0ms | Allocations: 5444)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 90)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 13260)
+Completed 200 OK in 22ms (Views: 17.4ms | ActiveRecord: 0.4ms | Allocations: 16399)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 19:15:12 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 18.1ms | Allocations: 11073)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 11138)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.9ms | Allocations: 12826)
+
+
+  
+ActionView::Template::Error (undefined method `r' for #<ActionView::Base:0x00000000008660>):
+    12:               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBsNUz7ZRGfPfNrjZhf_-id9E7lcaB8RTZgA&usqp=CAU" alt="Img">
+    13:             </div>
+    14:           </div>
+    15:           <%= link_to r activity do%>
+    16:             <h3><%= activity.title %></h3>
+    17:           <% end %> 
+    18:           <h5><%= activity.date_time.to_formatted_s(:short) %></h5>
+  
+app/views/activities/index.html.erb:15
+app/views/activities/index.html.erb:7
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 19:15:22 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1240)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 2.5ms | Allocations: 1193)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 6907)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.3ms | Allocations: 8281)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 19:15:47 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1064)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1131)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 6519)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.2ms | Allocations: 7792)
+
+
+Started GET "/activities/2" for 127.0.0.1 at 2021-03-19 19:15:57 +0000
+Processing by ActivitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:71:in `set_activity'
+  Rendering layout layouts/application.html.erb
+  Rendering activities/show.html.erb within layouts/application
+  Rendered activities/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 407)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 816)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4937)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.3ms | Allocations: 6066)
+
+
+Started GET "/activities/new" for 127.0.0.1 at 2021-03-19 19:16:00 +0000
+Processing by ActivitiesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering activities/new.html.erb within layouts/application
+  Rendered activities/_form.html.erb (Duration: 9.5ms | Allocations: 8074)
+  Rendered activities/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 8384)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 12164)
+Completed 200 OK in 32ms (Views: 14.3ms | ActiveRecord: 0.1ms | Allocations: 23829)
+
+
+Started POST "/activities" for 127.0.0.1 at 2021-03-19 19:16:06 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"Olá 2", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"19", "date_time(4i)"=>"19", "date_time(5i)"=>"16", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"19", "elapsed_time(4i)"=>"19", "elapsed_time(5i)"=>"16", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities/new
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 2428)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/activities_controller.rb:28:in `create'
+Started GET "/" for 127.0.0.1 at 2021-03-19 19:17:06 +0000
+Processing by HomeController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/welcome.html.erb within layouts/application
+  Rendered home/welcome.html.erb within layouts/application (Duration: 0.3ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 834)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 4646)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.1ms | Allocations: 5672)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-19 19:17:35 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 801)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 3.0ms | Allocations: 817)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 5331)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.5ms | Allocations: 5784)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-21 22:18:35 +0000
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/welcome.html.erb within layouts/application
+  Rendered home/welcome.html.erb within layouts/application (Duration: 0.8ms | Allocations: 271)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 3.0ms | Allocations: 549)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 90)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 7697)
+Completed 200 OK in 43ms (Views: 30.8ms | ActiveRecord: 0.0ms | Allocations: 11381)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-03-21 22:18:40 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.1ms | Allocations: 567)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 53.6ms | Allocations: 4274)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 145)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 63.1ms | Allocations: 8156)
+Completed 200 OK in 85ms (Views: 65.8ms | ActiveRecord: 0.5ms | Allocations: 13837)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2021-03-21 22:18:53 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"jpdiasfernandes13@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jpdiasfernandes13@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 362ms (ActiveRecord: 1.0ms | Allocations: 4566)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-21 22:18:53 +0000
+Processing by HomeController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/welcome.html.erb within layouts/application
+  Rendered home/welcome.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 863)
+  Rendered layouts/_alerts.html.erb (Duration: 0.8ms | Allocations: 101)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4891)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.2ms | Allocations: 5333)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-21 22:19:00 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 24.8ms | Allocations: 7004)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | Allocations: 817)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | Allocations: 11496)
+Completed 200 OK in 45ms (Views: 35.7ms | ActiveRecord: 2.8ms | Allocations: 13210)
+
+
+Started GET "/activities/new" for 127.0.0.1 at 2021-03-21 22:19:06 +0000
+Processing by ActivitiesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering activities/new.html.erb within layouts/application
+  Rendered activities/_form.html.erb (Duration: 15.5ms | Allocations: 5959)
+  Rendered activities/new.html.erb within layouts/application (Duration: 17.6ms | Allocations: 6270)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 131)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 10048)
+Completed 200 OK in 101ms (Views: 27.4ms | ActiveRecord: 0.2ms | Allocations: 14366)
+
+
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:19:18 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"3", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"19", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"19", "distance"=>"443", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mActivity Create (35.1ms)[0m  [1m[32mINSERT INTO "activities" ("title", "description", "date_time", "distance", "elapsed_time", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "3"], ["description", ""], ["date_time", "2021-03-21 22:19:00"], ["distance", 443.0], ["elapsed_time", "2000-01-01 22:19:00"], ["created_at", "2021-03-21 22:19:18.759162"], ["updated_at", "2021-03-21 22:19:18.759162"], ["user_id", 1]]
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+Redirected to http://localhost:3000/activities/4
+Completed 302 Found in 57ms (ActiveRecord: 38.2ms | Allocations: 6163)
+
+
+Started GET "/activities/4" for 127.0.0.1 at 2021-03-21 22:19:18 +0000
+Processing by ActivitiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:71:in `set_activity'
+  Rendering layout layouts/application.html.erb
+  Rendering activities/show.html.erb within layouts/application
+  Rendered activities/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 399)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 3.2ms | Allocations: 816)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 4997)
+Completed 200 OK in 20ms (Views: 15.9ms | ActiveRecord: 0.6ms | Allocations: 6133)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-03-21 22:19:21 +0000
+Processing by ActivitiesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering activities/index.html.erb within layouts/application
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/activities/index.html.erb:7
+  Rendered activities/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 1.8ms | Allocations: 813)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 5418)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.2ms | Allocations: 5866)
+
+
+Started GET "/activities/new" for 127.0.0.1 at 2021-03-21 22:19:23 +0000
+Processing by ActivitiesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering activities/new.html.erb within layouts/application
+  Rendered activities/_form.html.erb (Duration: 26.4ms | Allocations: 4609)
+  Rendered activities/new.html.erb within layouts/application (Duration: 27.0ms | Allocations: 4683)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 127)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 37.2ms | Allocations: 8535)
+Completed 200 OK in 44ms (Views: 38.0ms | ActiveRecord: 0.2ms | Allocations: 10120)
+
+
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:19:26 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"19", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"19", "distance"=>"43", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities/new
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms | Allocations: 2392)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/activities_controller.rb:28:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:37:44 +0000
+  
+SyntaxError (/home/jose/Projetos/oflow/app/controllers/activities_controller.rb:81: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+...e redirect_to new_activity_path, notice "Args required"
+...              ^~~~~~~~~~~~~~~~~
+/home/jose/Projetos/oflow/app/controllers/activities_controller.rb:81: syntax error, unexpected string literal, expecting `do' or '{' or '('
+..._to new_activity_path, notice "Args required"
+...                              ^
+/home/jose/Projetos/oflow/app/controllers/activities_controller.rb:86: syntax error, unexpected local variable or method, expecting `end'
+      if !params.permited? redi
+                           ^~~~
+):
+  
+app/controllers/activities_controller.rb:81: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/activities_controller.rb:81: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/controllers/activities_controller.rb:86: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/activities_controller.rb:81: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/activities_controller.rb:81: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/controllers/activities_controller.rb:86: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/activities_controller.rb:81: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/activities_controller.rb:81: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/controllers/activities_controller.rb:86: syntax error, unexpected local variable or method, expecting `end'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:38:37 +0000
+  
+SyntaxError (/home/jose/Projetos/oflow/app/controllers/activities_controller.rb:81: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+...e redirect_to new_activity_path, notice "Args required"
+...              ^~~~~~~~~~~~~~~~~
+/home/jose/Projetos/oflow/app/controllers/activities_controller.rb:81: syntax error, unexpected string literal, expecting `do' or '{' or '('
+..._to new_activity_path, notice "Args required"
+...                              ^
+):
+  
+app/controllers/activities_controller.rb:81: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/activities_controller.rb:81: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/controllers/activities_controller.rb:81: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/activities_controller.rb:81: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/controllers/activities_controller.rb:81: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/controllers/activities_controller.rb:81: syntax error, unexpected string literal, expecting `do' or '{' or '('
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:39:08 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"19", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"19", "distance"=>"43", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities/new
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mActivity Create (0.3ms)[0m  [1m[32mINSERT INTO "activities" ("title", "description", "date_time", "distance", "elapsed_time", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["description", ""], ["date_time", "2021-03-21 22:19:00"], ["distance", 43.0], ["elapsed_time", "2000-01-01 22:19:00"], ["created_at", "2021-03-21 22:39:08.892461"], ["updated_at", "2021-03-21 22:39:08.892461"], ["user_id", 1]]
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 3.6ms | Allocations: 16168)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/activities_controller.rb:32:in `block (2 levels) in create'
+app/controllers/activities_controller.rb:30:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:39:40 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"19", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"19", "distance"=>"43", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities/new
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mActivity Create (0.2ms)[0m  [1m[32mINSERT INTO "activities" ("created_at", "updated_at", "user_id") VALUES (?, ?, ?)[0m  [["created_at", "2021-03-21 22:39:40.743938"], ["updated_at", "2021-03-21 22:39:40.743938"], ["user_id", 1]]
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 4.6ms | Allocations: 16396)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/activities_controller.rb:32:in `block (2 levels) in create'
+app/controllers/activities_controller.rb:30:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:39:53 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"19", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"19", "distance"=>"43", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities/new
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mActivity Create (0.3ms)[0m  [1m[32mINSERT INTO "activities" ("created_at", "updated_at", "user_id") VALUES (?, ?, ?)[0m  [["created_at", "2021-03-21 22:39:53.732964"], ["updated_at", "2021-03-21 22:39:53.732964"], ["user_id", 1]]
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 5.2ms | Allocations: 16998)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/activities_controller.rb:32:in `block (2 levels) in create'
+app/controllers/activities_controller.rb:30:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:40:51 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"19", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"19", "distance"=>"43", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities/new
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mActivity Create (0.2ms)[0m  [1m[32mINSERT INTO "activities" ("title", "description", "date_time", "distance", "elapsed_time", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["description", ""], ["date_time", "2021-03-21 22:19:00"], ["distance", 43.0], ["elapsed_time", "2000-01-01 22:19:00"], ["created_at", "2021-03-21 22:40:51.172600"], ["updated_at", "2021-03-21 22:40:51.172600"], ["user_id", 1]]
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 4.6ms | Allocations: 18162)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/activities_controller.rb:32:in `block (2 levels) in create'
+app/controllers/activities_controller.rb:30:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:41:06 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"19", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"19", "distance"=>"43", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities/new
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mActivity Create (0.2ms)[0m  [1m[32mINSERT INTO "activities" ("created_at", "updated_at", "user_id") VALUES (?, ?, ?)[0m  [["created_at", "2021-03-21 22:41:06.113389"], ["updated_at", "2021-03-21 22:41:06.113389"], ["user_id", 1]]
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 3.6ms | Allocations: 17282)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/activities_controller.rb:32:in `block (2 levels) in create'
+app/controllers/activities_controller.rb:30:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:41:42 +0000
+  
+SyntaxError (/home/jose/Projetos/oflow/app/controllers/activities_controller.rb:85: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/activities_controller.rb:85: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/activities_controller.rb:85: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/activities_controller.rb:85: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/activities/new" for 127.0.0.1 at 2021-03-21 22:42:00 +0000
+Processing by ActivitiesController#new as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering activities/new.html.erb within layouts/application
+  Rendered activities/_form.html.erb (Duration: 7.8ms | Allocations: 4770)
+  Rendered activities/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 4848)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 136)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 8761)
+Completed 200 OK in 58ms (Views: 14.0ms | ActiveRecord: 3.9ms | Allocations: 22119)
+
+
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:42:01 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"42", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"42", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.2ms | Allocations: 2080)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: title
+Did you mean?  title
+               date_time(5i)
+               date_time(4i)
+               date_time(3i)):
+  
+app/controllers/activities_controller.rb:77:in `block in activity_params'
+app/controllers/activities_controller.rb:76:in `tap'
+app/controllers/activities_controller.rb:76:in `activity_params'
+app/controllers/activities_controller.rb:28:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:44:15 +0000
+  
+SyntaxError (/home/jose/Projetos/oflow/app/controllers/activities_controller.rb:88: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/activities_controller.rb:88: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/activities_controller.rb:88: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/activities_controller.rb:88: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:44:26 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"42", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"42", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities/new
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mActivity Create (0.2ms)[0m  [1m[32mINSERT INTO "activities" ("title", "description", "date_time", "elapsed_time", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["description", ""], ["date_time", "2021-03-21 22:42:00"], ["elapsed_time", "2000-01-01 22:42:00"], ["created_at", "2021-03-21 22:44:27.087027"], ["updated_at", "2021-03-21 22:44:27.087027"], ["user_id", 1]]
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 6.0ms | Allocations: 18177)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/activities_controller.rb:32:in `block (2 levels) in create'
+app/controllers/activities_controller.rb:30:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:44:48 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"42", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"42", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities/new
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("created_at", "updated_at", "user_id") VALUES (?, ?, ?)[0m  [["created_at", "2021-03-21 22:44:48.176581"], ["updated_at", "2021-03-21 22:44:48.176581"], ["user_id", 1]]
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 4.8ms | Allocations: 17964)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/activities_controller.rb:32:in `block (2 levels) in create'
+app/controllers/activities_controller.rb:30:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:44:58 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"42", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"42", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities/new
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mActivity Create (0.3ms)[0m  [1m[32mINSERT INTO "activities" ("created_at", "updated_at", "user_id") VALUES (?, ?, ?)[0m  [["created_at", "2021-03-21 22:44:58.764588"], ["updated_at", "2021-03-21 22:44:58.764588"], ["user_id", 1]]
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 6.3ms | Allocations: 17099)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/activities_controller.rb:32:in `block (2 levels) in create'
+app/controllers/activities_controller.rb:30:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:48:29 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"42", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"42", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 400 Bad Request in 20ms (ActiveRecord: 1.8ms | Allocations: 7796)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: title
+Did you mean?  title
+               date_time(5i)
+               date_time(4i)
+               date_time(3i)):
+  
+app/controllers/activities_controller.rb:77:in `block in activity_params'
+app/controllers/activities_controller.rb:76:in `tap'
+app/controllers/activities_controller.rb:76:in `activity_params'
+app/controllers/activities_controller.rb:28:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:49:03 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"42", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"42", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities/new
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 2.7ms | Allocations: 13227)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/activities_controller.rb:28:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:49:25 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"42", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"42", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities/new
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mActivity Create (0.3ms)[0m  [1m[32mINSERT INTO "activities" ("created_at", "updated_at", "user_id") VALUES (?, ?, ?)[0m  [["created_at", "2021-03-21 22:49:25.831634"], ["updated_at", "2021-03-21 22:49:25.831634"], ["user_id", 1]]
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 6.3ms | Allocations: 17722)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/activities_controller.rb:32:in `block (2 levels) in create'
+app/controllers/activities_controller.rb:30:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:50:31 +0000
+  
+SyntaxError (/home/jose/Projetos/oflow/app/controllers/activities_controller.rb:77: syntax error, unexpected `do', expecting `then' or ';' or '\n'
+...arams[:activity][:distance]) do
+...                             ^~
+/home/jose/Projetos/oflow/app/controllers/activities_controller.rb:83: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/activities_controller.rb:77: syntax error, unexpected `do', expecting `then' or ';' or '\n'
+app/controllers/activities_controller.rb:83: syntax error, unexpected `end', expecting end-of-input
+app/controllers/activities_controller.rb:77: syntax error, unexpected `do', expecting `then' or ';' or '\n'
+app/controllers/activities_controller.rb:83: syntax error, unexpected `end', expecting end-of-input
+app/controllers/activities_controller.rb:77: syntax error, unexpected `do', expecting `then' or ';' or '\n'
+app/controllers/activities_controller.rb:83: syntax error, unexpected `end', expecting end-of-input
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:50:44 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"42", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"42", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities/new
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 3.1ms | Allocations: 13266)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/activities_controller.rb:28:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:52:54 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"42", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"42", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities/new
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 3.3ms | Allocations: 13485)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, ActionController::ParameterMissing passed.):
+  
+app/controllers/activities_controller.rb:28:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:53:07 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"443", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"42", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"42", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities/new
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 2385)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, ActionController::ParameterMissing passed.):
+  
+app/controllers/activities_controller.rb:28:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:54:07 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"443", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"42", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"42", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities/new
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 2.5ms | Allocations: 13486)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, ActionController::ParameterMissing passed.):
+  
+app/controllers/activities_controller.rb:28:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:55:31 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"443", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"42", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"42", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities/new
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.7ms | Allocations: 13487)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/activities_controller.rb:28:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:55:47 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"443", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"42", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"42", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities/new
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("created_at", "updated_at", "user_id") VALUES (?, ?, ?)[0m  [["created_at", "2021-03-21 22:55:48.049355"], ["updated_at", "2021-03-21 22:55:48.049355"], ["user_id", 1]]
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 5.7ms | Allocations: 16583)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/activities_controller.rb:32:in `block (2 levels) in create'
+app/controllers/activities_controller.rb:30:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:57:07 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"443", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"42", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"42", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 400 Bad Request in 21ms (ActiveRecord: 1.5ms | Allocations: 7797)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: distance
+Did you mean?  distance
+               date_time(5i)
+               date_time(4i)
+               date_time(3i)):
+  
+app/controllers/activities_controller.rb:78:in `block in activity_params'
+app/controllers/activities_controller.rb:76:in `tap'
+app/controllers/activities_controller.rb:76:in `activity_params'
+app/controllers/activities_controller.rb:28:in `create'
+Started GET "/" for 127.0.0.1 at 2021-03-21 22:59:09 +0000
+Processing by HomeController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/welcome.html.erb within layouts/application
+  Rendered home/welcome.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/layouts/_header.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 10.8ms | Allocations: 5095)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 8788)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 1.2ms | Allocations: 9337)
+
+
+Started GET "/activities/new" for 127.0.0.1 at 2021-03-21 22:59:13 +0000
+  
+SyntaxError (/home/jose/Projetos/oflow/app/controllers/activities_controller.rb:81: syntax error, unexpected local variable or method, expecting `then' or ';' or '\n'
+...ctivity][:distance].nil?) raise "Params missing"
+...                          ^~~~~
+):
+  
+app/controllers/activities_controller.rb:81: syntax error, unexpected local variable or method, expecting `then' or ';' or '\n'
+app/controllers/activities_controller.rb:81: syntax error, unexpected local variable or method, expecting `then' or ';' or '\n'
+app/controllers/activities_controller.rb:81: syntax error, unexpected local variable or method, expecting `then' or ';' or '\n'
+Started GET "/" for 127.0.0.1 at 2021-03-21 22:59:37 +0000
+Processing by HomeController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/welcome.html.erb within layouts/application
+  Rendered home/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/layouts/_header.html.erb:14
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 17.3ms | Allocations: 5095)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 8788)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 2.9ms | Allocations: 9443)
+
+
+Started GET "/activities/new" for 127.0.0.1 at 2021-03-21 22:59:39 +0000
+Processing by ActivitiesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering activities/new.html.erb within layouts/application
+  Rendered activities/_form.html.erb (Duration: 24.7ms | Allocations: 4684)
+  Rendered activities/new.html.erb within layouts/application (Duration: 25.3ms | Allocations: 4759)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 8537)
+Completed 200 OK in 85ms (Views: 34.9ms | ActiveRecord: 1.4ms | Allocations: 17338)
+
+
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 22:59:40 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"59", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"59", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 400 Bad Request in 9ms (ActiveRecord: 0.2ms | Allocations: 2065)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: title
+Did you mean?  title
+               date_time(5i)
+               date_time(4i)
+               date_time(3i)):
+  
+app/controllers/activities_controller.rb:77:in `block in activity_params'
+app/controllers/activities_controller.rb:76:in `tap'
+app/controllers/activities_controller.rb:76:in `activity_params'
+app/controllers/activities_controller.rb:28:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 23:00:06 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"59", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"59", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.1ms | Allocations: 7709)
+
+
+  
+LocalJumpError (no block given):
+  
+app/controllers/activities_controller.rb:76:in `tap'
+app/controllers/activities_controller.rb:76:in `activity_params'
+app/controllers/activities_controller.rb:28:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 23:00:20 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"59", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"59", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mActivity Create (0.3ms)[0m  [1m[32mINSERT INTO "activities" ("created_at", "updated_at", "user_id") VALUES (?, ?, ?)[0m  [["created_at", "2021-03-21 23:00:20.355347"], ["updated_at", "2021-03-21 23:00:20.355347"], ["user_id", 1]]
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+Redirected to http://localhost:3000/activities/15
+Completed 302 Found in 52ms (ActiveRecord: 5.8ms | Allocations: 16246)
+
+
+Started GET "/activities/15" for 127.0.0.1 at 2021-03-21 23:00:20 +0000
+Processing by ActivitiesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:71:in `set_activity'
+  Rendering layout layouts/application.html.erb
+  Rendering activities/show.html.erb within layouts/application
+  Rendered activities/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 71)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 2.3ms | Allocations: 819)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 4684)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.4ms | Allocations: 5826)
+
+
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 23:01:24 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"22", "date_time(5i)"=>"59", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"22", "elapsed_time(5i)"=>"59", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mActivity Create (0.2ms)[0m  [1m[32mINSERT INTO "activities" ("created_at", "updated_at", "user_id") VALUES (?, ?, ?)[0m  [["created_at", "2021-03-21 23:01:24.475277"], ["updated_at", "2021-03-21 23:01:24.475277"], ["user_id", 1]]
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+Redirected to http://localhost:3000/activities/16
+Completed 302 Found in 35ms (ActiveRecord: 4.7ms | Allocations: 15750)
+
+
+Started GET "/activities/16" for 127.0.0.1 at 2021-03-21 23:01:24 +0000
+Processing by ActivitiesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:71:in `set_activity'
+  Rendering layout layouts/application.html.erb
+  Rendering activities/show.html.erb within layouts/application
+  Rendered activities/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 71)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 819)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 4670)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.3ms | Allocations: 5779)
+
+
+Started GET "/activities/new" for 127.0.0.1 at 2021-03-21 23:02:08 +0000
+Processing by ActivitiesController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering activities/new.html.erb within layouts/application
+  Rendered activities/_form.html.erb (Duration: 5.7ms | Allocations: 4685)
+  Rendered activities/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 4760)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 134)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 8556)
+Completed 200 OK in 35ms (Views: 10.9ms | ActiveRecord: 1.9ms | Allocations: 21844)
+
+
+Started POST "/activities" for 127.0.0.1 at 2021-03-21 23:02:09 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"23", "date_time(5i)"=>"02", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"23", "elapsed_time(5i)"=>"02", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.2ms | Allocations: 2073)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: title
+Did you mean?  title
+               date_time(5i)
+               date_time(4i)
+               date_time(3i)):
+  
+app/controllers/activities_controller.rb:77:in `block in activity_params'
+app/controllers/activities_controller.rb:76:in `tap'
+app/controllers/activities_controller.rb:76:in `activity_params'
+app/controllers/activities_controller.rb:28:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-22 08:52:30 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"23", "date_time(5i)"=>"02", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"23", "elapsed_time(5i)"=>"02", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mActivity Create (0.3ms)[0m  [1m[32mINSERT INTO "activities" ("created_at", "updated_at", "user_id") VALUES (?, ?, ?)[0m  [["created_at", "2021-03-22 08:52:30.938656"], ["updated_at", "2021-03-22 08:52:30.938656"], ["user_id", 1]]
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 3.2ms | Allocations: 15375)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/activities_controller.rb:32:in `block (2 levels) in create'
+app/controllers/activities_controller.rb:30:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-22 08:54:43 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"23", "date_time(5i)"=>"02", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"23", "elapsed_time(5i)"=>"02", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mActivity Create (0.2ms)[0m  [1m[32mINSERT INTO "activities" ("created_at", "updated_at", "user_id") VALUES (?, ?, ?)[0m  [["created_at", "2021-03-22 08:54:43.598383"], ["updated_at", "2021-03-22 08:54:43.598383"], ["user_id", 1]]
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:31:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 4.7ms | Allocations: 16400)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/activities_controller.rb:32:in `block (2 levels) in create'
+app/controllers/activities_controller.rb:30:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-22 08:55:20 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"23", "date_time(5i)"=>"02", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"23", "elapsed_time(5i)"=>"02", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.6ms | Allocations: 8061)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/activities_controller.rb:82:in `exit'
+app/controllers/activities_controller.rb:82:in `rescue in block in activity_params'
+app/controllers/activities_controller.rb:77:in `block in activity_params'
+app/controllers/activities_controller.rb:76:in `tap'
+app/controllers/activities_controller.rb:76:in `activity_params'
+app/controllers/activities_controller.rb:28:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-22 08:56:45 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"23", "date_time(5i)"=>"02", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"23", "elapsed_time(5i)"=>"02", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/activities
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.8ms | Allocations: 13498)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, ActionController::ParameterMissing passed.):
+  
+app/controllers/activities_controller.rb:28:in `create'
+Started POST "/activities" for 127.0.0.1 at 2021-03-22 10:48:09 +0000
+  
+SyntaxError (/home/jose/Projetos/oflow/app/controllers/activities_controller.rb:105: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/activities_controller.rb:105: syntax error, unexpected `end', expecting end-of-input
+app/controllers/activities_controller.rb:105: syntax error, unexpected `end', expecting end-of-input
+app/controllers/activities_controller.rb:105: syntax error, unexpected `end', expecting end-of-input
+Started POST "/activities" for 127.0.0.1 at 2021-03-22 10:51:01 +0000
+  
+SyntaxError (/home/jose/Projetos/oflow/app/controllers/activities_controller.rb:105: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/activities_controller.rb:105: syntax error, unexpected `end', expecting end-of-input
+app/controllers/activities_controller.rb:105: syntax error, unexpected `end', expecting end-of-input
+app/controllers/activities_controller.rb:105: syntax error, unexpected `end', expecting end-of-input
+Started POST "/activities" for 127.0.0.1 at 2021-03-22 10:51:10 +0000
+Processing by ActivitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "activity"=>{"title"=>"", "date_time(1i)"=>"2021", "date_time(2i)"=>"3", "date_time(3i)"=>"21", "date_time(4i)"=>"23", "date_time(5i)"=>"02", "elapsed_time(1i)"=>"2021", "elapsed_time(2i)"=>"3", "elapsed_time(3i)"=>"21", "elapsed_time(4i)"=>"23", "elapsed_time(5i)"=>"02", "distance"=>"", "elevation"=>"", "avg_hr"=>"", "max_hr"=>"", "effort"=>"", "description"=>"", "user_id"=>"1"}, "commit"=>"Create Activity"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 400 Bad Request in 7ms (ActiveRecord: 0.3ms | Allocations: 7357)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: title
+Did you mean?  title
+               date_time(5i)
+               date_time(4i)
+               date_time(3i)):
+  
+app/controllers/activities_controller.rb:77:in `block in activity_params'
+app/controllers/activities_controller.rb:76:in `tap'
+app/controllers/activities_controller.rb:76:in `activity_params'
+app/controllers/activities_controller.rb:28:in `create'
+Started GET "/" for 127.0.0.1 at 2021-03-23 08:39:59 +0000
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/welcome.html.erb within layouts/application
+  Rendered home/welcome.html.erb within layouts/application (Duration: 2.1ms | Allocations: 339)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 6.0ms | Allocations: 549)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 90)
+  Rendered layout layouts/application.html.erb (Duration: 44.2ms | Allocations: 7833)
+Completed 200 OK in 67ms (Views: 50.4ms | ActiveRecord: 0.0ms | Allocations: 10876)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-03-23 08:40:06 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.6ms | Allocations: 567)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 17.8ms | Allocations: 4271)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 145)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | Allocations: 8139)
+Completed 200 OK in 48ms (Views: 31.4ms | ActiveRecord: 1.1ms | Allocations: 13821)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2021-03-23 08:40:19 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"jpdiasfernandes13@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jpdiasfernandes13@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 353ms (ActiveRecord: 1.1ms | Allocations: 4575)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-23 08:40:19 +0000
+Processing by HomeController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/welcome.html.erb within layouts/application
+  Rendered home/welcome.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 863)
+  Rendered layouts/_alerts.html.erb (Duration: 0.8ms | Allocations: 103)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 4881)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.2ms | Allocations: 5308)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-23 18:51:17 +0000
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210323184051_create_profiles.rb
+
+
+):
+  
+activerecord (6.1.3) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.3) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.3) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.3) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.3) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.3) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+webpacker (5.2.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.1.3) lib/rails/engine.rb:539:in `call'
+puma (5.2.1) lib/puma/configuration.rb:247:in `call'
+puma (5.2.1) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.1) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.1) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.1) lib/puma/server.rb:431:in `process_client'
+puma (5.2.1) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2021-03-23 18:51:23 +0000
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProfiles (20210323184051)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" date, "nactionality" varchar, "gender" varchar, "photo" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210323184051"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-03-23 18:51:23 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/welcome.html.erb within layouts/application
+  Rendered home/welcome.html.erb within layouts/application (Duration: 0.7ms | Allocations: 85)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.6ms | Allocations: 547)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 90)
+  Rendered layout layouts/application.html.erb (Duration: 52.5ms | Allocations: 22530)
+Completed 200 OK in 57ms (Views: 53.5ms | ActiveRecord: 0.0ms | Allocations: 24573)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-03-23 18:51:27 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 568)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 4280)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 152)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 8222)
+Completed 200 OK in 20ms (Views: 12.4ms | ActiveRecord: 0.7ms | Allocations: 14715)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2021-03-23 18:51:38 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"jpdiasfernandes13@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jpdiasfernandes13@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 222ms (ActiveRecord: 0.4ms | Allocations: 3969)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-23 18:51:38 +0000
+Processing by HomeController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/welcome.html.erb within layouts/application
+  Rendered home/welcome.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 863)
+  Rendered layouts/_alerts.html.erb (Duration: 0.6ms | Allocations: 100)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 4891)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 5448)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2021-03-23 18:51:44 +0000
+Processing by ProfilesController#index as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 5310)
+
+
+  
+NoMethodError (undefined method `attr_accesible' for #<Class:0x0000558bdfeb0aa8>
+Did you mean?  attr_accessor):
+  
+app/models/profile.rb:2:in `<class:Profile>'
+app/models/profile.rb:1:in `<main>'
+app/controllers/profiles_controller.rb:11:in `index'
+Started GET "/profiles" for 127.0.0.1 at 2021-03-23 18:56:37 +0000
+Processing by ProfilesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/profiles/index.html.erb:18
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:18
+  Rendered profiles/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1361)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:14
+  Rendered layouts/_header.html.erb (Duration: 5.2ms | Allocations: 4510)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 9623)
+Completed 200 OK in 42ms (Views: 11.5ms | ActiveRecord: 0.7ms | Allocations: 11283)
+
+
