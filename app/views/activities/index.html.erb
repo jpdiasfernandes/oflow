@@ -1,9 +1,14 @@
 <div class="activity-mainbody">
   <div class="activity-userinfo">
-    User info
+   <div class="activity-user">
+     <h4>Name user</h4><br>
+     <div class="activity-avatar-u">
+       <img src="" alt="img">
+     </div>
+   </div>
   </div>
+
   <div class="activity-feed">
-    Feed
     <% @activities.each do |activity| %>
       <div class="activity-common">
         <div class="activity-header">
@@ -12,14 +17,31 @@
               <img src="" alt="Img">
             </div>
           </div>
-          <%= link_to activity do%>
-            <h3><%= activity.title %></h3>
-          <% end %> 
-          <h5><%= activity.date_time.to_formatted_s(:short) %></h5>
+
+          <div class="activity-date">
+           <h5><%= activity.date_time.to_formatted_s(:short) %></h5>
+          </div> 
+          <div class="activity-title">
+           <%= link_to activity do%>
+              <h3><%= activity.title %></h3>
+           <% end %> 
+          </div> 
         </div> 
         <br>
-        <p><%= activity.distance %> KM</p>
-        <p><%= activity.elapsed_time.strftime('%I:%M:%S') %></p>
+        <div class="activity-d-t">
+         <%= activity.elapsed_time.strftime('%I:%M:%S') %> /
+         <%= activity.distance %> KM /
+         <%= activity.elevation %> M
+        </div>
+
+        <div class="activity-a-m">
+         <%= activity.avg_hr %> Avg /
+         <%= activity.max_hr %> Max
+        </div>
+
+        <div class="activity-des">
+         <p><%= activity.description %></p>
+        </div>
       </div>
       <br>
     <% end %>
@@ -29,10 +51,11 @@
   such as distance and training related, friends updates, clubs updates
   in small widgets -->
   <div class="activity-misc">
-    Misc
+   <div class="activity-misc-title">
+     <h4> New Event: </h4>
+   </div>
   </div>
 </div>
-
 
 
 

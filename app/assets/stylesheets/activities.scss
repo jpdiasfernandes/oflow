@@ -5,8 +5,9 @@
 .activity-mainbody {
     width: 1024px;
     height: auto;
-    margin: 10px auto 10px auto;
+    margin: 15px auto 15px auto;
     overflow: hidden;
+    margin-left: -5%;
 }
 
 .activity-feed {
@@ -20,14 +21,42 @@
     width: 23%;
     float: left;
     height: 300px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(230, 206, 190);
+    border-radius: 3px;
+    padding: 2%;
+    background-color: rgb(255, 255, 255);
+}
+
+/*User*/
+.activity-user{
+    text-align: center;
+    padding: 2px;
 }
 
 .activity-misc {
     width: 23%;
     float: right;
     height: 300px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(230, 206, 190);
+    border-radius: 3px;
+    padding: 2%;
+    background-color: rgb(255, 255, 255);
 }
 
+.activity-avatar-u{
+    vertical-align: middle;
+    margin-left: 25%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid;
+}
+
+/*ativity layout*/
 .activity-box {
     padding: 2%;
     background-color: rgb(255, 255, 255);
@@ -43,11 +72,45 @@
 
 }
 
-kk
-
 .entry-avatar{
     vertical-align: middle;
     width: 50px;
     height: 50px;
     border-radius: 50%;
+}
+
+.activity-date{
+    text-align: right;
+    margin-top: -11%;
+}
+
+.activity-title{
+    padding-left: 1%;
+    margin-top: -2%;
+}
+
+.activity-d-t{
+    font-size: 150%;
+    padding-left: 1%;
+    letter-spacing: 2px;
+}
+
+.activity-a-m{
+    font-size: 150%;
+    padding-left: 1%;
+    letter-spacing: 2px;
+    margin-top: 2%;
+}
+
+.activity-des{
+    margin-top: 2%;
+    padding-left: 1%;
+    padding: 1%;
+    letter-spacing: 2px;
+}
+
+/*Misc*/
+.activity-misc-title{
+    text-align: center;
+    padding: 2px;
 }
